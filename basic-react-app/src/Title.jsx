@@ -1,7 +1,14 @@
 import React from "react";
 
 function Title() {
-  return <h1>Saloni Mishra</h1>;
+  let name = "Saloni Mishra";
+
+  return (
+    <>
+      <h1>{name}</h1>
+      <p>Software Developer</p>
+    </>
+  );
 }
 
 export default Title;

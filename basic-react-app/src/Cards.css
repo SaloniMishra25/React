@@ -1,0 +1,66 @@
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  margin: 15px;
+  padding: 20px;
+  width: 200px;
+  height: 220px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Title */
+.card h3 {
+  font-size: 1.2rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Description */
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 8px 0;
+  text-align: left;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  background-color: #f9fcff;
+  border-color: #0077ff;
+}
+
+/* Optional Price Section Styling */
+.card .price-section {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card .old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+}
+
+.card .new-price {
+  font-weight: bold;
+  color: #0077ff;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: auto;
+  }
+}
