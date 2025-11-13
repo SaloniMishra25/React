@@ -1,8 +1,9 @@
 import "./App.css";
+import Game from "./components/lotteryGame/game";
 // import Counter from "./Counter";
 // import Container from "./components/Card/Container";
 // import LudoBoard from "./components/LudoBoard/LudoBoard";
-import TodoList from "./components/todoApp/TodoList";
+// import TodoList from "./components/todoApp/TodoList";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Counter /> */}
       {/* <Container /> */}
       {/* <LudoBoard /> */}
-      <TodoList/>
+      {/* <TodoList/> */}
+      <Game n={5} winningSum={25} />
     </>
   );
 }
