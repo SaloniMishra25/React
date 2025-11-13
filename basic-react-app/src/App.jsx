@@ -1,15 +1,18 @@
-import AmazonCard from "./AmazonCard";
+// import AmazonCard from "./AmazonCard";
 import "./App.css";
-import Message from "./Message";
-import ProductTab from "./ProductTab";
+// import Button from "./Button";
+import Form from "./Form";
+// import Message from "./Message";
+// import ProductTab from "./ProductTab";
 // import Title from "./Title";
 
 function App() {
   return (
     <>
-      <AmazonCard />
+      <Form />
+      {/* <Button/> */}
+      {/* <AmazonCard /> */}
       {/* <Message userName={"Saloni Mishra"} textColor={"green"} /> */}
-
       {/* <Title /> */}
       {/* <ProductTab /> */}
     </>
