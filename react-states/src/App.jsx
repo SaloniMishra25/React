@@ -1,5 +1,6 @@
 import "./App.css";
-import Game from "./components/lotteryGame/game";
+// import Game from "./components/lotteryGame/game";
+import Form from "./Form";
 // import Counter from "./Counter";
 // import Container from "./components/Card/Container";
 // import LudoBoard from "./components/LudoBoard/LudoBoard";
@@ -13,7 +14,8 @@ function App() {
       {/* <Container /> */}
       {/* <LudoBoard /> */}
       {/* <TodoList/> */}
-      <Game n={5} winningSum={25} />
+      {/* <Game n={5} winningSum={25} /> */}
+      <Form />
     </>
   );
 }
