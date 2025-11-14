@@ -1,46 +1,54 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./Todo.css";
 
 export default function TodoList() {
-  const [todos, setTodos] = useState([{ task: "sample task", id: uuidv4() }]);
+  const [todos, setTodos] = useState([{ task: "Sample task", id: uuidv4() }]);
   const [newTodo, setNewTodo] = useState("");
 
-  //Add Tasks
-  let addNewTask = () => {
-    setTodos((prevTodos) => {
-      return [...prevTodos, { task: newTodo, id: uuidv4() }];
-    });
+  // Add Task
+  const addNewTask = () => {
+    if (newTodo.trim() === "") return;
+
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { task: newTodo, id: uuidv4() },
+    ]);
     setNewTodo("");
   };
-  let updateTaskValue = (event) => {
+
+  const updateTaskValue = (event) => {
     setNewTodo(event.target.value);
   };
 
-  //Delete task
-  let deleteTodo = (id) => {
+  // Delete Task
+  const deleteTodo = (id) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Add a task"
-        value={newTodo}
-        onChange={updateTaskValue}
-      />
-      <br />
-      <br />
-      <button onClick={addNewTask}>Add Task</button>
-      <br />
-      <br />
-      <hr />
-      <h4>Todo List</h4>
-      <ul>
+    <div className="todo-container">
+      <h2 className="title">Todo App</h2>
+
+      <div className="input-area">
+        <input
+          type="text"
+          placeholder="Add a new task..."
+          value={newTodo}
+          onChange={updateTaskValue}
+        />
+        <button className="add-btn" onClick={addNewTask}>
+          Add Task
+        </button>
+      </div>
+
+      <ul className="todo-list">
         {todos.map((todo) => (
-          <li key={todo.id}>
-            <span>{todo.task}</span> &nbsp;&nbsp;&nbsp;
-            <button onClick={() => deleteTodo(todo.id)}>delete</button>
+          <li key={todo.id} className="todo-item">
+            <span>{todo.task}</span>
+            <button className="delete-btn" onClick={() => deleteTodo(todo.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
